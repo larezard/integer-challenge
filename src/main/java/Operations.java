@@ -1,7 +1,6 @@
-package main.java;
-
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Optional;
 
 public class Operations {
     private final ArrayList<Integer> userInput;
@@ -9,7 +8,6 @@ public class Operations {
     private int sizeOfEntry;
 
     public  Operations (ArrayList<Integer> entry) {
-        Collections.sort(entry);
         userInput = entry;
         setSizeOfEntry();
     }
@@ -22,11 +20,15 @@ public class Operations {
     }
 
     public Integer getMaximum (){
-        return userInput.get(getSizeOfEntry()-1);
+        Optional<Integer> reduce = userInput.stream()
+                                            .reduce((n1, n2) -> n1 > n2 ? n1 : n2);
+        return reduce.isPresent() ? reduce.get(): null;
     }
 
     public Integer getMinimum (){
-        return userInput.get(0);
+        Optional<Integer> reduce = userInput.stream()
+                                            .reduce((n1, n2) -> n1 < n2 ? n1 : n2);
+        return reduce.isPresent() ? reduce.get(): null;
     }
 
     public void setSizeOfEntry() {
