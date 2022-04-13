@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 public class ChallengeTests {
 
-    private static Operations input;
+    private static Statistics input;
 
     @BeforeAll
-    public static void createsIntegerList(){
-        input = new Operations(new ArrayList<>(
+    public static void createsStatisticsObject(){
+        input = new Statistics(new ArrayList<>(
                 Arrays.asList(6, 9, 15, -2, 92, 11)
         ));
     }

@@ -19,7 +19,7 @@ public class Challenge {
             }
         }
 
-        Operations operations = new Operations(numbers);
+        Operations operations = new Statistics(numbers);
 
         System.out.println("Minimum value: " + operations.getMinimum());
         System.out.println("Maximum value: " + operations.getMaximum());
