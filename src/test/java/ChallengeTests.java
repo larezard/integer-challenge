@@ -7,13 +7,15 @@ import java.util.Arrays;
 
 public class ChallengeTests {
 
-    private static Statistics input;
+    private static Operations input;
 
     @BeforeAll
     public static void createsStatisticsObject(){
-        input = new Statistics(new ArrayList<>(
+        ArrayList<Integer> entry = new ArrayList<>(
                 Arrays.asList(6, 9, 15, -2, 92, 11)
-        ));
+        );
+        input = new Operations();
+        input.calculateStatistics(entry);
     }
 
     @Test
